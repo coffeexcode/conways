@@ -1,8 +1,12 @@
 ﻿using GameOfLife;
 using GameOfLife.Building;
+using GameOfLife.Patterns.Misc;
+using GameOfLife.Patterns.Generators;
+using GameOfLife.Patterns.Movers;
 using GameOfLife.Patterns.Oscillators;
 using GameOfLife.Patterns.Shapes;
 using GameOfLife.Patterns.Spaceships;
+using GameOfLife.Patterns.Stills;
 using System;
 using System.Text;
 using System.Threading;
@@ -20,20 +24,11 @@ namespace TerminalGameOfLife
 
         public static char EmptyChar { get; } = '.';
 
-        public static int Delay { get; } = 125;
+        public static int Delay { get; } = 25;
 
         static void Main(string[] args)
         {
             WorldBuilder builder = new WorldBuilder(40, 160);
-
-            builder.Place(new VerticalLine(5), 0, 0);
-            builder.Place(new HorizontalLine(12), 5, 6);
-
-            builder.Place(new VerticalBlinker(), 12, 15);
-            builder.Place(new HorizontalBlinker(), 16, 16);
-
-            builder.Place(new Glider(), 20, 20);
-            builder.Place(new HeavyweightSpaceship(), 5, 50);
 
             DisplayWorld(builder.World);
 
