@@ -4,19 +4,26 @@ using System.Text;
 
 namespace GameOfLife.Patterns.Shapes
 {
+    /// <summary>
+    /// The horizontal line pattern.
+    /// Size: 1xn
+    /// </summary>
     public class HorizontalLine : Pattern
     {
 
+        /// <summary>
+        /// Create a new horizontal line pattern.
+        /// </summary>
+        /// <param name="width">Width of the horizontal line</param>
         public HorizontalLine(int width) : base(1, width) { }
 
-        protected override bool[,] Build()
+        /// <summary>
+        /// Build the horizontal line pattern.
+        /// </summary>
+        protected override void Build()
         {
-            var cells = new bool[1, Width];
-
             for (int i = 0; i < Width; i++)
-                cells[0, i] = true;
-
-            return cells;
+                Cells[0, i] = true;
         }
     }
 }

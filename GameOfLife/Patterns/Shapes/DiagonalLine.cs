@@ -5,25 +5,24 @@ using System.Text;
 namespace GameOfLife.Patterns.Shapes
 {
     /// <summary>
-    /// The vertical line pattern.
-    /// Size: nx1
+    /// A diagonal line pattern
+    /// Size: nxn
     /// </summary>
-    public class VerticalLine : Pattern
+    public class DiagonalLine : Pattern
     {
-
         /// <summary>
-        /// Create a new vertical line pattern.
+        /// Create a diagonal line.
         /// </summary>
-        /// <param name="height">Height of the vertical line.</param>
-        public VerticalLine(int height) : base(height, 1) { }
+        /// <param name="length">Length of the line.</param>
+        public DiagonalLine(int length) : base(length, length) { }
 
         /// <summary>
-        /// Build the vertical line pattern.
+        /// Build a diagonal line pattern.
         /// </summary>
         protected override void Build()
         {
             for (int i = 0; i < Height; i++)
-                Cells[i, 0] = true;
+                Cells[i, i] = true;
         }
     }
 }

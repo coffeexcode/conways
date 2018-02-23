@@ -46,15 +46,15 @@ namespace GameOfLife.Patterns
         {
             Height = height;
             Width = width;
+            Cells = new bool[Height, Width];
 
-            Cells = Build();
+            Build();
         }
 
         /// <summary>
         /// Method that is used to initialize the pattern
         /// </summary>
-        /// <returns>A 2D array of cells to represent the pattern.</returns>
-        protected abstract bool[,] Build();
+        protected abstract void Build();
 
         /// <summary>
         /// Get's the value of a specific cell in the pattern.

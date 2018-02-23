@@ -5,27 +5,26 @@ using System.Text;
 namespace GameOfLife.Patterns.Stills
 {
     /// <summary>
-    /// The boat pattern:
-    /// Size: 3x3
+    /// The longship pattern.
+    /// Size: 4x4
     /// </summary>
-    public class Boat : Pattern
+    public class Longship : Pattern
     {
+
         /// <summary>
-        /// Create the boat pattern.
+        /// Create a longship pattern.
         /// </summary>
-        public Boat() : base(3, 3) { }
-
+        public Longship() : base(4, 4) { }
 
         /// <summary>
-        /// Build the boat pattern
+        /// Build the longship pattern.
         /// </summary>
         protected override void Build()
         {
+            var longboat = new Longboat();
+
+            PatternBuilder.Place(longboat, Cells, 0, 0);
             Cells[0, 0] = true;
-            Cells[0, 1] = true;
-            Cells[1, 0] = true;
-            Cells[1, 2] = true;
-            Cells[2, 1] = true;
         }
     }
 }

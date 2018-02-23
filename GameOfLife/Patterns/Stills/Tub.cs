@@ -19,17 +19,12 @@ namespace GameOfLife.Patterns.Stills
         /// <summary>
         /// Build the tub pattern
         /// </summary>
-        /// <returns>A 2D array of cells containing the tub pattern.</returns>
-        protected override bool[,] Build()
+        protected override void Build()
         {
-            var cells = new bool[3, 3];
-
-            cells[0, 1] = true;
-            cells[2, 0] = true;
-            cells[2, 2] = true;
-            cells[2, 1] = true;
-
-            return cells;
+            Cells[0, 1] = true;
+            Cells[2, 0] = true;
+            Cells[2, 2] = true;
+            Cells[2, 1] = true;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GameOfLife.Patterns;
+using GameOfLife.Patterns.Stills;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -108,6 +109,7 @@ namespace GameOfLife.Building
 
         /// <summary>
         /// Checks whether a pattern can be placed in the corresponding postition.
+        /// Subtract 1 from height/width since we are placing on the row/col provided.
         /// See <see cref="Pattern"/> for details about positions
         /// </summary>
         /// <param name="pattern">Pattern to check placement</param>
@@ -121,12 +123,12 @@ namespace GameOfLife.Building
             int height = pattern.Height;
             int width = pattern.Width;
 
-            if (row + height >= World.Height)
+            if (row + (height - 1) >= World.Height)
             {
                 return false;
             }
 
-            if (col + width >= World.Width)
+            if (col + (width - 1) >= World.Width)
             {
                 return false;
             }

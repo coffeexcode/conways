@@ -22,12 +22,12 @@ namespace GameOfLife.Patterns
         /// <summary>
         /// The total width of the pattern.
         /// </summary>
-        public int TotalWidth { get; }
+        public int TotalWidth { get; private set; }
 
         /// <summary>
         /// The total height of the pattern
         /// </summary>
-        public int TotalHeight { get; }
+        public int TotalHeight { get; private set; }
 
         /// <summary>
         /// Create an oscillator pattern.
@@ -36,6 +36,10 @@ namespace GameOfLife.Patterns
         /// <param name="width">Initial width of the pattern.</param>
         /// <param name="totalWidth">Total height of the pattern (includes all phases).</param>
         /// <param name="totalHeight">Total width of the pattern (inclues all phases).</param>
-        public Oscillator(int height, int width, int totalWidth, int totalHeight) : base(height, width) { }
+        public Oscillator(int height, int width, int totalHeight, int totalWidth) : base(height, width)
+        {
+            TotalHeight = totalHeight;
+            TotalWidth = totalWidth;
+        }
     }
 }

@@ -19,20 +19,15 @@ namespace GameOfLife.Patterns.Oscillators
         /// <summary>
         /// Builds the toad pattern.
         /// </summary>
-        /// <returns>2D array of cells containing the toad pattern.</returns>
-        protected override bool[,] Build()
+        protected override void Build()
         {
-            var cells = new bool[Height, Width];
+            Cells[0, 1] = true;
+            Cells[0, 2] = true;
+            Cells[0, 3] = true;
 
-            cells[0, 1] = true;
-            cells[0, 2] = true;
-            cells[0, 3] = true;
-
-            cells[1, 0] = true;
-            cells[1, 1] = true;
-            cells[1, 2] = true;
-
-            return cells;
+            Cells[1, 0] = true;
+            Cells[1, 1] = true;
+            Cells[1, 2] = true;
         }
     }
 }

@@ -18,21 +18,16 @@ namespace GameOfLife.Patterns.Spaceships
         /// <summary>
         /// Build a lightweight spaceship pattern.
         /// </summary>
-        /// <returns>A 2D array of cells containg the lightweight spaceship pattern.</returns>
-        protected override bool[,] Build()
+        protected override void Build()
         {
-            var cells = new bool[Height, Width];
-
-            cells[0, 3] = true;
-            cells[1, 4] = true;
-            cells[2, 0] = true;
-            cells[2, 4] = true;
-            cells[3, 1] = true;
-            cells[3, 2] = true;
-            cells[3, 3] = true;
-            cells[3, 4] = true;
-
-            return cells;
+            Cells[0, 3] = true;
+            Cells[1, 4] = true;
+            Cells[2, 0] = true;
+            Cells[2, 4] = true;
+            Cells[3, 1] = true;
+            Cells[3, 2] = true;
+            Cells[3, 3] = true;
+            Cells[3, 4] = true;
         }
     }
 }
